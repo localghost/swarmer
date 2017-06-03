@@ -9,7 +9,7 @@ func NewContainerCommand() *cobra.Command {
 		Use: "container [OPTIONS] COMMAND",
 	}
 
-	cmd.AddCommand(NewLsCommand())
+	cmd.AddCommand(NewPsCommand())
 
 	return cmd
 }

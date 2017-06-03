@@ -36,6 +36,6 @@ func NewRootCommand() *cobra.Command {
 }
 
 func addCommands(root *cobra.Command) {
-	root.AddCommand(container.NewContainerCommand())
+	root.AddCommand(container.NewPsCommand())
 	root.AddCommand(node.NewNodeCommand())
 }

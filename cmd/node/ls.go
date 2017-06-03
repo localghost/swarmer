@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"net"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
@@ -35,11 +34,11 @@ func listNodes() {
 	}
 	for _, node := range nodes {
 		if node.ManagerStatus != nil {
-			host, _, err := net.SplitHostPort(node.ManagerStatus.Addr)
-			if err != nil {
-				log.Fatal(err)
-			}
-			fmt.Printf("Manager: %s\n", host)
+			// 	host, _, err := net.SplitHostPort(node.ManagerStatus.Addr)
+			// 	if err != nil {
+			// 		log.Fatal(err)
+			// 	}
+			fmt.Printf("Manager: %s\n", node.Status.Addr)
 		} else {
 			fmt.Printf("Worker: %s\n", node.Status.Addr)
 		}
